@@ -27,6 +27,7 @@ export function* login(data){
     const getData = data.data
     const resp = yield call(loginData,getData)  
     if(resp.status) {
+        localStorage.setItem('Token', resp.data.token);
         yield put({ type: LOGIN_SUCCESS, data: resp.data })
     } else {
         yield put({ type: LOGIN_FAILED, error: resp.error})

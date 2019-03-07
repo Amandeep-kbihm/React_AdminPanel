@@ -13,6 +13,7 @@ const initialState = {
 export default function ForgetPassword(state=initialState,action){
     switch(action.type){
         case CHECK_EMAIL_SUCCESS:
+        console.log(action)
         return{
             ...state,
             message: action.message,
@@ -21,7 +22,8 @@ export default function ForgetPassword(state=initialState,action){
         case CHECK_EMAIL_FAILED:
         return{
             ...state,
-            error: action.error
+            error: action.error,
+            successmsg: false
         }
         case SET_MESSAGE:
         return {

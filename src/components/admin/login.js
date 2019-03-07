@@ -13,6 +13,7 @@ class Login extends React.Component{
         email: "",
         password: "",
         status: 1,
+        isLogged: false
     }
     handleLogin = (event) => {
         event.preventDefault();

@@ -10,7 +10,8 @@ const initialState = {
     success: false,
     error: "",
     loading: false,
-    message: ""
+    message: "",
+    isLogged: false
 }
 
 export default function Login(state=initialState,action){
@@ -21,7 +22,8 @@ export default function Login(state=initialState,action){
             ...initialState,
             token: action.data.token,
             admin: action.data.user,
-            success: true
+            success: true,
+            isLogged: true
         }
         case LOGIN_FAILED:
         return{
